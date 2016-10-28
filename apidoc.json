@@ -1,0 +1,15 @@
+{
+  "name": "giwitter",
+  "version": "0.1.0",
+  "description": "giwitter API",
+  "title": "giwitter API",
+  "url": "http://giwi.free.fr",
+  "sampleUrl": "http://giwi.free.fr",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  },
+  "header": {
+    "filename": "README.md"
+  }
+}

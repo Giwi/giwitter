@@ -6,3 +6,4 @@ webroot/node_modules
 .vertx
 classes
 file-uploads
+doc
