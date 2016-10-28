@@ -1,0 +1,28 @@
+@media only screen and (max-width: 768px) {
+    .navbar-toggleable-md {
+        margin-top: 3rem;
+    }
+}
+
+.nav-item h5 {
+    color: #fff;
+    display: block;
+    padding-top: .425rem;
+    padding-bottom: .425rem;
+}
+
+img.avatar {
+    max-width: 50px;
+    vertical-align: text-top;
+    -webkit-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    -moz-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    -ms-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    -o-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    margin-top: -0.5em;
+}
+
+li.avatar h5 {
+    max-height: 30px;
+    overflow: visible;
+}

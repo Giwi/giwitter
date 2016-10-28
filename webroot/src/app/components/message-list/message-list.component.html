@@ -1,0 +1,51 @@
+<template ngbModalContainer></template>
+<template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Attention</h4>
+    </div>
+    <div class="modal-body">
+        <p>Êtes-vous sûr de vouloir supprimer ce message?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="d()">Annuler</button>
+        <button type="button" class="btn btn-danger" (click)="deleteMessage()">Supprimer</button>
+    </div>
+</template>
+<div class="container">
+    <h1>Liste des messages</h1>
+    <div class="qa-message-list" id="wallmessages">
+        <div class="message-item" id="m16" *ngFor="let m of messages">
+            <div class="message-inner">
+                <div class="message-head clearfix">
+                    <div class="avatar pull-left">
+                        <img [src]="m.author.avatar? avatarUrl + m.author.avatar: '../../assets/default_user.jpg'">
+                        <div class="user-detail">
+                            <div class="post-meta">
+                                <div class="asker-meta">
+                                    <span class="qa-message-what"></span>
+                                    <span class="qa-message-when">
+                                        <span class="qa-message-when-data">{{m.date | date:'medium'}}</span>
+                                    </span>
+                                    <span class="qa-message-who">
+                                        <span class="qa-message-who-pad">by </span>
+                                        <span class="qa-message-who-data">{{m.author.firstname}} {{m.author.name}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qa-message-content">
+                        {{m.content}}
+                    </div>
+                    <button (click)="open(content, m._id)" class="btn btn-sm btn-danger text-white float-xs-right"
+                            *ngIf="uid === m.author._id"><i class="fa fa-trash fa-fw"></i></button>
+                </div>
+            </div>
+        </div>
+        <nav class="fab-container">
+            <button class="fab-buttons btn-danger" tooltip="Ajouter" (click)="openAdd()">+</button>
+        </nav>
+    </div>
