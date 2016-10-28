@@ -1,5 +1,16 @@
 # Giwitter
 
+Small messaging board web app based on [Angular 2](https://angular.io/), 
+[Bootstrap 4](http://v4-alpha.getbootstrap.com/), 
+[Vert.x 3](http://vertx.io/) and [MongoDB](https://www.mongodb.com)
+
+- User registration
+- Login
+- Messages wall
+- Add message
+- Delete owned messages
+- Update user name and profile 
+
 ## setup
 
     $ [sudo] npm install -g angular-cli
