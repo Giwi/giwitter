@@ -1,9 +1,14 @@
-<nav class="navbar navbar-fixed-top navbar-dark bg-primary bg-faded">
-    <a class="navbar-brand" href="#"><img src="/assets/giwi.png" height="40px" alt=""></a>
+<nav class="navbar navbar-fixed-top navbar-dark custom-nav bg-faded">
+    <a class="navbar-brand" href="#"><img src="/assets/logo.png" height="40px" alt=""></a>
     <button class="navbar-toggler hidden-md-up float-xs-right" type="button" (click)="isCollapsed = !isCollapsed"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
     <div class="collapse navbar-toggleable-md" [ngbCollapse]="isCollapsed">
         <ul class="nav navbar-nav float-xs-right">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="/api-doc" (click)="isCollapsed =true">
+                    <i class="fa fa-book fa-fw" aria-hidden="true"></i>
+                    API Doc</a>
+            </li>
             <li class="nav-item" routerLinkActive="active" *ngIf="logged">
                 <a class="nav-link" href="#/message" (click)="isCollapsed =true">
                     <i class="fa fa-list fa-fw" aria-hidden="true"></i>

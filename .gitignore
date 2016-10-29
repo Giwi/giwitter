@@ -7,3 +7,12 @@ webroot/node_modules
 classes
 file-uploads
 doc
+src/main/resources/webroot/assets
+src/main/resources/webroot/api-doc
+src/main/resources/webroot/*.html
+src/main/resources/webroot/*.eot
+src/main/resources/webroot/*.svg
+src/main/resources/webroot/*.woff*
+src/main/resources/webroot/*.ttf
+src/main/resources/webroot/*.js*
+application

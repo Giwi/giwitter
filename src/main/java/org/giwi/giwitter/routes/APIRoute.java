@@ -13,6 +13,7 @@ import io.vertx.ext.web.handler.CorsHandler;
 import io.vertx.ext.web.handler.sockjs.BridgeOptions;
 import io.vertx.ext.web.handler.sockjs.PermittedOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
+import org.apache.commons.lang3.StringUtils;
 import org.giwi.giwitter.annotation.VertxRoute;
 import org.giwi.giwitter.beans.AuthUtils;
 import org.giwi.giwitter.beans.ResponseUtils;
@@ -34,16 +35,19 @@ public class APIRoute implements VertxRoute.Route {
     public Router init(Vertx vertx) {
         Router router = Router.router(vertx);
         router.route().handler(BodyHandler.create());
-        router.route().path("/*")
-                .handler(CorsHandler.create("http://localhost:4200")
-                        .allowCredentials(true)
-                        .allowedMethod(HttpMethod.GET)
-                        .allowedMethod(HttpMethod.POST)
-                        .allowedMethod(HttpMethod.PUT)
-                        .allowedMethod(HttpMethod.DELETE)
-                        .allowedHeader("Origin, X-Requested-With, Content-Type, Accept, X-secure-Token, Access-Control-Allow-Credentials")
-                );
 
+        String corsStr = System.getenv("ENV");
+        if(StringUtils.isBlank(corsStr) || "DEV".equals(corsStr)) {
+            router.route().path("/*")
+                    .handler(CorsHandler.create("http://localhost:4200")
+                            .allowCredentials(true)
+                            .allowedMethod(HttpMethod.GET)
+                            .allowedMethod(HttpMethod.POST)
+                            .allowedMethod(HttpMethod.PUT)
+                            .allowedMethod(HttpMethod.DELETE)
+                            .allowedHeader("Origin, X-Requested-With, Content-Type, Accept, X-secure-Token, Access-Control-Allow-Credentials")
+                    );
+        }
 
         SockJSHandler sockJSHandler = SockJSHandler.create(vertx);
         PermittedOptions inboundPermitted = new PermittedOptions();

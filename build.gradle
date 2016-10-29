@@ -95,5 +95,4 @@ task generateServiceProxy(type: JavaCompile, description: 'Generates EBServicePr
     ]
 }
 
-
 compileJava.dependsOn generateServiceProxy

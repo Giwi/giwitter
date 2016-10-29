@@ -1,7 +1,7 @@
 # Giwitter
 
-Small messaging board web app based on [Angular 2](https://angular.io/), 
-[Bootstrap 4](http://v4-alpha.getbootstrap.com/), 
+Small messaging board web app based on [Angular 2](https://angular.io/),
+[Bootstrap 4](http://v4-alpha.getbootstrap.com/),
 [Vert.x 3](http://vertx.io/) and [MongoDB](https://www.mongodb.com)
 
 - User registration
@@ -9,15 +9,21 @@ Small messaging board web app based on [Angular 2](https://angular.io/),
 - Messages wall
 - Add message
 - Delete owned messages
-- Update user name and profile 
+- Update user name and profile
 
-## setup
+It comes with a Dockerfile witch runs this app with a mongo DB.
 
-    $ [sudo] npm install -g angular-cli
-    $ cd webroot
-    $ npm install
+## Requirements
 
-## run
+- NodeJS 5+
+- NPM 3+
+- Java JDK8+
+
+## Setup (Ubuntu)
+
+    $ ./script/setup.sh
+
+## Run (Dev mode)
 
     $ ./gradlew r
     $ cd webroot
@@ -28,7 +34,18 @@ Small messaging board web app based on [Angular 2](https://angular.io/),
 
 https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services
 
-
-dans mongo
+## Mongo setup
 
     db.user.createIndex( { username: 1 }, { unique: true } )
+
+## Dist
+
+    $ ./script/build.sh
+
+You can test locally with :
+
+    $ ENV=PROD java -jar application/Giwitter-fat.jar
+
+## Docker
+
+    $ ./script/docker.sh
