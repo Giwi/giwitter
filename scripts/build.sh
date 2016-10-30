@@ -5,5 +5,6 @@ ng build --prod
 cp -R dist/* ../src/main/resources/webroot/.
 cd ..
 apidoc -i src/main/java
-mv doc src/main/resources/webroot/api-doc
+mv doc/index.html doc/apidoc.html
+mv doc/* src/main/resources/webroot/.
 ./gradlew shadowJar

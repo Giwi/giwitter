@@ -38,7 +38,6 @@ public class MainVerticle extends AbstractVerticle {
                             mainRouter.mountSubRouter(item.getKey().rootPath(), item.getValue().init(vertx));
                         }
                 );
-
         mainRouter.route("/*").handler(StaticHandler.create());
         mainRouter.route().last().handler(context ->
                 context.response()

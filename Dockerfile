@@ -1,0 +1,15 @@
+FROM ubuntu:16.04
+MAINTAINER Giwi Soft <giwi@free.fr>
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+RUN echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+RUN apt-get update && apt-get install -y mongodb-10gen openjdk-8-jre-headless
+RUN mkdir -p /opt/giwitter
+COPY docker/mongodb.sh /etc/init.d/.
+RUN chmod 0755 /etc/init.d/mongodb.sh; mkdir -p /data/db; chmod 777 /data/db
+COPY docker/entrypoint.sh /opt/.
+RUN chmod +x /opt/entrypoint.sh
+COPY application/Giwitter-fat.jar /opt/giwitter/.
+EXPOSE 8080
+EXPOSE 27017
+VOLUME ["/data/db"]
+CMD ["/opt/entrypoint.sh"]
