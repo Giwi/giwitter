@@ -48,4 +48,6 @@ You can test locally with :
 
 ## Docker
 
+See [https://hub.docker.com/r/giwi/giwitter/](https://hub.docker.com/r/giwi/giwitter/)
+
     $ docker run -ti -p 8181:8080 -p 27018:27017 giwi/giwitter:latest
