@@ -7,4 +7,5 @@ cd ..
 apidoc -i src/main/java
 mv doc/index.html doc/apidoc.html
 mv doc/* src/main/resources/webroot/.
+mv webroot/src/favicon.ico src/main/resources/webroot/.
 ./gradlew shadowJar

@@ -31,7 +31,7 @@ export class SignupComponent {
    */
   register() {
     this.userService.register(this.user).subscribe(() => {
-      this.toasterService.pop('success', 'Inscription', 'Votre compte a été créé');
+      this.toasterService.pop('success', 'Inscription', 'Votre compte a été créé.');
       this.user = new User();
       this.router.navigate(['/login']);
     }, error => this.userService.handleError(error));

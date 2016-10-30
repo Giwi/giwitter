@@ -9,6 +9,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.FaviconHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 import org.giwi.giwitter.annotation.ProxyService;
 import org.giwi.giwitter.annotation.VertxRoute;
@@ -38,7 +39,9 @@ public class MainVerticle extends AbstractVerticle {
                             mainRouter.mountSubRouter(item.getKey().rootPath(), item.getValue().init(vertx));
                         }
                 );
+
         mainRouter.route("/*").handler(StaticHandler.create());
+        mainRouter.route("/*").handler(FaviconHandler.create());
         mainRouter.route().last().handler(context ->
                 context.response()
                         .setStatusCode(404)
