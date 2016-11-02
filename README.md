@@ -11,6 +11,8 @@ Small messaging board web app based on [Angular 2](https://angular.io/),
 - Delete owned messages
 - Update user name and profile
 
+[Demo](http://vps288382.ovh.net/#/)
+
 It comes with a Dockerfile witch runs this app with a mongo DB.
 
 ## Requirements

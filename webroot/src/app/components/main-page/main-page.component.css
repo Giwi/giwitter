@@ -174,13 +174,6 @@ aside {
     }
 }
 
-.giwi {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-}
-
 header {
     padding-top: 100vh;
     margin-top: -5em;
@@ -215,6 +208,13 @@ header .header-content .header-content-inner p {
     font-size: 16px;
     text-align: center;
     margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+    header {
+        min-height: 100vh;
+        padding-top: 0;
+    }
 }
 
 @media (min-width: 768px) {

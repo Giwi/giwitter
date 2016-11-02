@@ -5,6 +5,11 @@
     <div class="collapse navbar-toggleable-md" [ngbCollapse]="isCollapsed">
         <ul class="nav navbar-nav float-xs-right">
             <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="https://github.com/Giwi/giwitter" target="_blank" (click)="isCollapsed =true">
+                    <i class="fa fa-github fa-fw" aria-hidden="true"></i>
+                    Source code</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" href="apidoc.html" (click)="isCollapsed =true">
                     <i class="fa fa-book fa-fw" aria-hidden="true"></i>
                     API Doc</a>
@@ -41,3 +46,11 @@
 <toaster-container></toaster-container>
 <template ngbModalContainer></template>
 <router-outlet></router-outlet>
+<div class="mastfoot">
+    <div class="inner">
+        <p>Made by <a href="http://giwi.free/fr" target="_blank">Giwi Softwares</a> |
+            <a href="https://twitter.com/XavMarin" target="_blank"><i class="fa fa-twitter fa-fw"></i>@XavMarin</a> |
+            <a href="https://github.com/Giwi" target="_blank"><i class="fa fa-github fa-fw"></i>Giwi</a>
+        </p>
+    </div>
+</div>
