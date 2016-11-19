@@ -151,6 +151,7 @@ public class UserServiceImpl implements UserService {
 
                 JsonObject response = new JsonObject()
                         .put("secureToken", secureToken.getString("token"))
+                        .put("user_id", res.result().principal().getString("_id"))
                         .put("status", true);
 
                 getUser(new JsonObject().put("_id", res.result().principal().getString("_id")), mongoRes -> {
