@@ -426,3 +426,18 @@ img::-moz-selection {
     color: #fff;
     background: 0 0
 }
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+    color: rgba(255, 255, 255, .5);
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    padding-top: 10px;
+    bottom: 0;
+    position: fixed;
+}

@@ -111,7 +111,10 @@ public class MessageRoute implements VertxRoute.Route {
      * @api {post} /api/1/private/message Add a message
      * @apiName create
      * @apiGroup Message
-     * @apiParam {Object} message Message
+     * @apiParam {String} content Message
+     * @apiParam {String} user_id User id
+     * @apiParamExample {json} Request-Example:
+     * {user_id: "123456", content: "toto"}
      * @apiDescription Add a message
      * @apiSuccess {Object} message Message
      * @apiHeader {String} X-secure-Token Authorization token.

@@ -37,9 +37,10 @@ public class APIRoute implements VertxRoute.Route {
         router.route().handler(BodyHandler.create());
 
         String corsStr = System.getenv("ENV");
+        System.out.println(corsStr);
         if(StringUtils.isBlank(corsStr) || "DEV".equals(corsStr)) {
             router.route().path("/*")
-                    .handler(CorsHandler.create("http://localhost:4200")
+                    .handler(CorsHandler.create("*")
                             .allowCredentials(true)
                             .allowedMethod(HttpMethod.GET)
                             .allowedMethod(HttpMethod.POST)

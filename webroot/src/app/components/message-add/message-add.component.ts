@@ -30,7 +30,7 @@ export class MessageAddComponent implements OnInit {
     ngOnInit() {
         this.message = new Message();
         this.message.date = new Date().getTime();
-        this.message.author = this.authenticationService.user;
+        this.message.user_id = this.authenticationService.user._id;
     }
 
     /**

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "giwitter API",
   "title": "giwitter API",
-  "url": "http://vps288382.ovh.net",
-  "sampleUrl": "http://vps288382.ovh.net",
+  "url": "http://localhost:8080",
+  "sampleUrl": "http://localhost:8080",
   "template": {
     "withCompare": true,
     "withGenerator": true

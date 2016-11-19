@@ -66,13 +66,13 @@ public class UsersRoute implements VertxRoute.Route {
      * @apiHeader {String} X-secure-Token Authorization token.
      * @apiSuccess {Object} user User
      */
-    private void updateUser(RoutingContext rc) {
-        userService.updateUser(rc.getBodyAsJson(), res -> {
+    private void updateUser(RoutingContext context) {
+        userService.updateUser(context.getBodyAsJson(), res -> {
             if (res.succeeded()) {
                 vertx.eventBus().send("del-message", true);
-                rc.response().end(cleanUser(res.result()).encode());
+                context.response().end(cleanUser(res.result()).encode());
             } else {
-                rc.fail(new BusinessException(res.cause()));
+                context.fail(new BusinessException(res.cause()));
             }
         });
     }

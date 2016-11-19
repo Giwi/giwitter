@@ -49,6 +49,8 @@ public class UsersRoute implements VertxRoute.Route {
      * @apiDescription user login
      * @apiParam {String} username User username
      * @apiParam {String} password User password
+     * @apiParamExample {json} Request-Example:
+     * {username: "toto", password: "toto"}
      * @apiSuccess {String} secureToken Token of the User
      * @apiSuccess {Boolean} status Status
      */
@@ -71,6 +73,8 @@ public class UsersRoute implements VertxRoute.Route {
      * @apiParam {String} password User password
      * @apiParam {String} name User name
      * @apiParam {String} firstname User firstname
+     * @apiParamExample {json} Request-Example:
+     * {username: "toto", password: "toto", name: "toto", firstname: "firstname"}
      * @apiSuccess {Boolean} status Status
      */
     private void register(RoutingContext context) {

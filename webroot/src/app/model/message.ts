@@ -4,4 +4,5 @@ export class Message {
     date: number;
     author: User;
     content: string;
+    user_id: string;
 }
