@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "giwitter API",
   "title": "giwitter API",
-  "url": "http://giwi.free.fr",
-  "sampleUrl": "http://giwi.free.fr",
+  "url": "http://vps288382.ovh.net",
+  "sampleUrl": "http://vps288382.ovh.net",
   "template": {
     "withCompare": true,
     "withGenerator": true

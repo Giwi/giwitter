@@ -11,8 +11,9 @@ import org.giwi.giwitter.beans.ResponseUtils;
 import org.giwi.giwitter.exception.BusinessException;
 import org.giwi.giwitter.services.MessageService;
 
+
 /**
- * The type Baab route.
+ * The type Message route.
  */
 @VertxRoute(rootPath = "/api/1/private/message")
 public class MessageRoute implements VertxRoute.Route {
