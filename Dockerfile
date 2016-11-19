@@ -9,6 +9,12 @@ RUN chmod 0755 /etc/init.d/mongodb.sh; mkdir -p /data/db; chmod 777 /data/db
 COPY docker/entrypoint.sh /opt/.
 RUN chmod +x /opt/entrypoint.sh
 COPY application/Giwitter-fat.jar /opt/giwitter/.
+
+RUN locale-gen fr_FR.UTF-8
+ENV LANG fr_FR.UTF-8
+ENV LANGUAGE fr_FR:fr
+ENV LC_ALL fr_FR.UTF-8
+
 EXPOSE 8080
 EXPOSE 27017
 VOLUME ["/data/db"]
